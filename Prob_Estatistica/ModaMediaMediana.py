@@ -1,11 +1,20 @@
 def calcular_moda(v):
-    c = 0
+    c = {}
     for i in v:
-        moda = v
-        if moda == v:
-            c += 1
+        if i == v:
+            c[i] += 1
         else:
-            c = 0
+            c[i] = 1
+    
+    moda = max(c.values())
+
+    modas = []
+    for valor, freq in c.items():
+        if freq == moda:
+            modas.append(v)
+    
+    return modas
+    
 
 def calcular_mediana(v):
     pass
@@ -15,5 +24,6 @@ def calcular_media(v):
     calc = sum(v)/len(v)
     return calc
 
-valores = []
-calcular_media(valores)
+valores = [1, 2, 2, 2, 5, 7, 6, 8]
+#calcular_media(valores)
+calcular_moda(valores)
